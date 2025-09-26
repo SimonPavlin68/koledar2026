@@ -1,0 +1,5 @@
+START_YEAR = 2026
+START_WEEK = 4
+END_YEAR = 2027
+END_WEEK = 3
+OUTPUT_FILE = "output/vikendi_2026_2027.csv"
