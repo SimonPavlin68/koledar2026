@@ -2,7 +2,8 @@ from datetime import datetime, timedelta
 
 
 def get_saturday_of_week(year, week):
-    return datetime.strptime(f'{year}-W{week}-6', "%Y-W%W-%w")
+    # 6 pomeni sobota v ISO (1 = ponedeljek, 7 = nedelja)
+    return datetime.fromisocalendar(year, week, 6)
 
 
 def parse_date(date_str):
@@ -21,7 +22,7 @@ def check_event_in_weekend(saturday, sunday, events):
     return "; ".join(notes) if notes else ""
 
 
-def generate_weekends_with_notes(start_year, start_week, end_year, end_week, events):
+def generate_weekends_with_notes_old(start_year, start_week, end_year, end_week, events):
     weekends = []
     year, week = start_year, start_week
 
@@ -54,7 +55,7 @@ def generate_weekends_with_notes(start_year, start_week, end_year, end_week, eve
     return weekends
 
 
-def generate_weekends1(start_year, start_week, end_year, end_week):
+def generate_weekends_with_notes(start_year, start_week, end_year, end_week, events, competitions):
     weekends = []
     year, week = start_year, start_week
 
@@ -62,21 +63,47 @@ def generate_weekends1(start_year, start_week, end_year, end_week):
         try:
             saturday = get_saturday_of_week(year, week)
             sunday = saturday + timedelta(days=1)
-            weekends.append({
+
+            od_datum = saturday.strftime("%d.%m.%Y")
+            do_datum = sunday.strftime("%d.%m.%Y")
+
+            note = check_event_in_weekend(saturday, sunday, events)
+
+            # 🔍 Poišči predlog iz competitions (če obstaja)
+            matching_comp = None
+            for comp in competitions:
+                try:
+                    comp_date = datetime.strptime(comp.get("od", ""), "%d.%m.%Y").date()
+                    if comp_date == saturday.date():
+                        matching_comp = comp
+                        break
+                except ValueError:
+                    continue  # Neveljaven datum, preskoči
+
+            # Zgradi zapis vikenda (tudi če ni predloga)
+            event = {
                 "teden": f"{week}",
-                "od": saturday.strftime("%d.%m.%Y"),
-                "do": sunday.strftime("%d.%m.%Y"),
-                "disciplina": "",
-                "kraj": "",
-                "organizator": "",
-                "tekmovanje": ""
-            })
+                "od": od_datum,
+                "do": do_datum,
+                "disciplina": matching_comp.get("disciplina", "") if matching_comp else "",
+                "kraj": matching_comp.get("kraj", "") if matching_comp else "",
+                "organizator": matching_comp.get("organizator", "") if matching_comp else "",
+                "tekmovanje": matching_comp.get("tekmovanje", "") if matching_comp else "",
+                "opombe": note or ""
+            }
+
+            weekends.append(event)
+
+            # Povečaj teden
             week += 1
             if week > 52:
                 week = 1
                 year += 1
+
         except Exception as e:
-            print(f"Napaka pri tednu {week} leta {year}: {e}")
+            print(f"❌ Napaka pri tednu {week} leta {year}: {e}")
             break
 
     return weekends
+
+
