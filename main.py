@@ -1,18 +1,23 @@
 import csv
 import json
 import os
-from calendar_generator import generate_weekends_with_notes
+from calendar_generator import generate_weekends_by_day
 from config import START_YEAR, START_WEEK, END_YEAR, END_WEEK, OUTPUT_FILE, OUTPUT_FILE_PDF
 import pdfkit
 
 
 def csv_to_colored_pdf(csv_file, pdf_file):
-    # Preberi CSV
     with open(csv_file, newline='', encoding='utf-8') as f:
         reader = csv.DictReader(f, delimiter=';')
         rows = list(reader)
 
-    # Pripravi HTML tabelo
+    # Preštej, koliko zaporednih vrstic ima isti teden
+    teden_count = {}
+    for row in rows:
+        t = row["TEDEN"]
+        teden_count[t] = teden_count.get(t, 0) + 1
+
+    # Za generiranje HTML tabele
     table_html = '<table border="1" cellspacing="0" cellpadding="5" style="border-collapse: collapse; width: 100%;">'
 
     # Glava tabele
@@ -21,25 +26,64 @@ def csv_to_colored_pdf(csv_file, pdf_file):
         table_html += f'<th>{header}</th>'
     table_html += '</tr>'
 
-    # Vrstice z barvanjem
+    # Sledimo, koliko vrstic tedna smo že izpisali
+    teden_done = {}
+
+    # Sledimo, koliko vrstic imamo za vsako kombinacijo TEDEN + OPOMBE
+    # Sledimo, koliko vrstic imamo za vsako kombinacijo TEDEN + OPOMBE
+    opombe_count = {}
+    for row in rows:
+        key = (row["TEDEN"], row.get("OPOMBE", ""))
+        opombe_count[key] = opombe_count.get(key, 0) + 1
+
+    opombe_done = {}
+
     for row in rows:
         disciplina = row.get("DISCIPLINA", "").strip()
+        # barvanje samo za ostale celice, OPOMBE in TEDEN brez barve
         if disciplina == "AH 12+12":
             bg_color = "lightgreen"
         elif disciplina == "3D krog":
             bg_color = "orange"
         elif disciplina == "70/50m krog + OK":
             bg_color = "yellow"
+        elif disciplina == "Dvorana":
+            bg_color = "#998AFF"
+        elif disciplina == "Šolsko":
+            bg_color = "orange"
         else:
             bg_color = "white"
-        table_html += f'<tr style="background-color:{bg_color}">'
+
+        table_html += '<tr>'
+
+        # TEDEN z rowspan (brez barve)
+        t = row["TEDEN"]
+        if t not in teden_done:
+            rowspan = teden_count[t]
+            table_html += f'<td rowspan="{rowspan}">{t}</td>'
+            teden_done[t] = 1
+        else:
+            teden_done[t] += 1
+
+        # ostali stolpci z barvo, razen TEDEN in OPOMBE
         for header in reader.fieldnames:
-            table_html += f'<td>{row.get(header, "")}</td>'
+            if header not in ["TEDEN", "OPOMBE"]:
+                table_html += f'<td style="background-color:{bg_color}">{row.get(header, "")}</td>'
+
+        # OPOMBE z rowspan (brez barve)
+        opombe = row.get("OPOMBE", "")
+        key = (t, opombe)
+        if key not in opombe_done:
+            rowspan = opombe_count[key]
+            table_html += f'<td rowspan="{rowspan}">{opombe}</td>'
+            opombe_done[key] = 1
+        else:
+            opombe_done[key] += 1
+
         table_html += '</tr>'
 
     table_html += '</table>'
 
-    # Renderiraj PDF
     options = {
         'page-size': 'A4',
         'orientation': 'Landscape',
@@ -50,7 +94,6 @@ def csv_to_colored_pdf(csv_file, pdf_file):
         'margin-right': '10mm',
     }
 
-    # Pot do wkhtmltopdf, če je Windows
     wkhtml_path = r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'
     config = pdfkit.configuration(wkhtmltopdf=wkhtml_path) if os.path.exists(wkhtml_path) else None
 
@@ -58,19 +101,23 @@ def csv_to_colored_pdf(csv_file, pdf_file):
     print(f"PDF ustvarjen: {pdf_file}")
 
 
+
 def save_to_csv(weekends, filepath):
     with open(filepath, "w", newline="", encoding='utf-8') as file:
         writer = csv.writer(file, delimiter=';')
-        writer.writerow(["TEDEN", "OD", "DO", "DISCIPLINA", "KRAJ", "ORGANIZATOR", "TEKMOVANJE", "OPOMBE"])
+        # spremenjen header: OD in DO → DATUM
+        writer.writerow(["TEDEN", "DATUM", "DISCIPLINA", "KRAJ", "ORGANIZATOR", "TEKMOVANJE", "OPOMBE"])
+
         for w in weekends:
-            writer.writerow([w["teden"],
-                             w["od"],
-                             w["do"],
-                             w["disciplina"],
-                             w["kraj"],
-                             w["organizator"],
-                             w["tekmovanje"],
-                             w.get("opombe", "")])
+            writer.writerow([
+                w["teden"],
+                w["datum"],      # DATUM
+                w["disciplina"],
+                w["kraj"],
+                w["organizator"],
+                w["tekmovanje"],
+                w.get("opombe", "")
+            ])
     print(f"CSV uspešno shranjen v: {filepath}")
 
 
@@ -96,7 +143,7 @@ def main():
         competitions = json.load(f)
 
     # weekends = generate_weekends(START_YEAR, START_WEEK, END_YEAR, END_WEEK)
-    weekends = generate_weekends_with_notes(START_YEAR, START_WEEK, END_YEAR, END_WEEK, events, competitions)
+    weekends = generate_weekends_by_day(START_YEAR, START_WEEK, END_YEAR, END_WEEK, events, competitions)
     save_to_csv(weekends, OUTPUT_FILE)
 
     csv_to_colored_pdf(OUTPUT_FILE, OUTPUT_FILE_PDF)

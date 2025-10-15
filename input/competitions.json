@@ -1,27 +1,48 @@
 [
     {
         "od": "28.03.2026",
-        "disciplina": "3D krog"
+        "disciplina": "Dvorana",
+        "kraj": "Podčetrtek",
+        "organizator": "ŠD Šentlok"
     },
      {
-        "od": "28.03.2026",
-        "disciplina": "krneki"
+        "od": "29.03.2026",
+        "disciplina": "Dvorana",
+        "kraj": "Podčetrtek",
+        "organizator": "ŠD Šentlok",
+        "tekmovanje": "DP 25m"
+    },
+    {
+        "od": "04.04.2026",
+        "disciplina": "3D krog"
+    },
+    {
+        "od": "11.04.2026",
+        "disciplina": "AH 12+12"
     },
     {
         "od": "18.04.2026",
-        "disciplina": "AH 12+12"
+        "disciplina": "70/50m krog + OK"
     },
     {
         "od": "25.04.2026",
         "disciplina": "3D krog"
     },
-        {
+    {
+        "od": "02.05.2026",
+        "disciplina": "70/50m krog + OK"
+    },
+    {
         "od": "09.05.2026",
         "disciplina": "AH 12+12"
     },
      {
         "od": "16.05.2026",
         "disciplina": "3D krog"
+    },
+     {
+        "od": "23.05.2026",
+        "disciplina": "70/50m krog + OK"
     },
     {
         "od": "30.05.2026",
@@ -33,19 +54,28 @@
     },
     {
         "od": "13.06.2026",
-        "disciplina": "70/50m krog + OK"
+        "disciplina": "AH 12+12"
     },
     {
         "od": "20.06.2026",
-        "disciplina": "AH 12+12"
+        "disciplina": "70/50m krog + OK"
     },
     {
         "od": "27.06.2026",
         "disciplina": "3D krog"
     },
     {
+        "od": "22.08.2026",
+        "disciplina": "3D krog"
+    },
+    {
         "od": "29.08.2026",
         "disciplina": "AH 12+12"
+    },
+    {
+        "od": "5.09.2026",
+        "disciplina": "70/50m krog + OK",
+        "tekmovanje": "DP"
     },
     {
         "od": "19.09.2026",
@@ -57,5 +87,67 @@
         "disciplina": "AH 12+12",
         "kraj": "Boč",
         "organizator": "ŠD Šentlok"
+    },
+    {
+        "od": "07.11.2026",
+        "disciplina": "Dvorana"
+    },
+    {
+        "od": "21.11.2026",
+        "disciplina": "Dvorana"
+    },  {
+        "od": "05.12.2026",
+        "disciplina": "Dvorana"
+    },
+     {
+        "od": "19.12.2026",
+        "disciplina": "Dvorana"
+    },
+     {
+        "od": "09.01.2027",
+        "disciplina": "Dvorana"
+    },
+    {
+        "od": "23.01.2027",
+        "disciplina": "Dvorana"
+    },
+    {
+        "od": "06.02.2027",
+        "disciplina": "Dvorana"
+    },
+    {
+        "od": "13.02.2027",
+        "disciplina": "Šolsko",
+         "tekmovanje": "področno"
+    },
+     {
+        "od": "14.02.2027",
+        "disciplina": "Šolsko",
+        "tekmovanje": "področno"
+    },
+    {
+        "od": "20.02.2027",
+        "disciplina": "Dvorana",
+        "tekmovanje": "DP 18m"
+    },
+    {
+        "od": "21.02.2027",
+        "disciplina": "Dvorana",
+        "tekmovanje": "DP 18m"
+    },
+    {
+        "od": "27.02.2027",
+        "disciplina": "Šolsko",
+        "tekmovanje": "DP"
+    },
+    {
+        "od": "06.03.2027",
+        "disciplina": "Dvorana",
+        "tekmovanje": "DP 25m"
+    },
+    {
+        "od": "07.03.2027",
+        "disciplina": "Dvorana",
+        "tekmovanje": "DP 25m"
     }
 ]
