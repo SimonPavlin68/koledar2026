@@ -1,6 +1,6 @@
 START_YEAR = 2026
-START_WEEK = 13
+START_WEEK = 9
 END_YEAR = 2027
-END_WEEK = 12
-OUTPUT_FILE = "output/koledar_2026.csv"
-OUTPUT_FILE_PDF = "output/koledar_2026.pdf"
+END_WEEK = 10
+OUTPUT_FILE = "output/koledar_2026-6.csv"
+OUTPUT_FILE_PDF = "output/koledar_2026-6.pdf"

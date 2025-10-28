@@ -4,6 +4,13 @@ import os
 from calendar_generator import generate_weekends_by_day
 from config import START_YEAR, START_WEEK, END_YEAR, END_WEEK, OUTPUT_FILE, OUTPUT_FILE_PDF
 import pdfkit
+import base64
+from datetime import datetime
+
+
+def get_base64_image(path):
+    with open(path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode('utf-8')
 
 
 def csv_to_colored_pdf(csv_file, pdf_file):
@@ -16,6 +23,30 @@ def csv_to_colored_pdf(csv_file, pdf_file):
     for row in rows:
         t = row["TEDEN"]
         teden_count[t] = teden_count.get(t, 0) + 1
+
+        # ✅ Logo za header (v base64)
+        logo_path = os.path.join(os.path.dirname(__file__), 'static', 'images', 'logo.png')
+        logo_base64 = get_base64_image(logo_path)
+
+        current_date = datetime.now().strftime("%d.%m.%Y")
+
+        # Glava HTML-ja z logotipom in naslovom
+
+        header_html = f"""
+        <table style="width:100%; border-collapse:collapse; margin-bottom:10px;">
+          <tr style="vertical-align:middle;">
+            <td style="width:20%; text-align:left; padding-left:20px;">
+              <img src="data:image/png;base64,{logo_base64}" alt="Logo" style="height:75px; vertical-align:middle;">
+            </td>
+            <td style="width:60%; text-align:center;">
+              <h2 style="margin:0; font-family:Arial, sans-serif;">Predlog koledarja 2026</h2>
+            </td>
+            <td style="width:20%; text-align:right; padding-right:20px; font-family:Arial, sans-serif; font-size:14px; color:silver;">
+              {current_date}
+            </td>
+          </tr>
+        </table>
+        """
 
     # Za generiranje HTML tabele
     table_html = '<table border="1" cellspacing="0" cellpadding="5" style="border-collapse: collapse; width: 100%;">'
@@ -44,13 +75,15 @@ def csv_to_colored_pdf(csv_file, pdf_file):
         if disciplina == "AH 12+12":
             bg_color = "lightgreen"
         elif disciplina == "3D krog":
-            bg_color = "orange"
+            bg_color = "#f28b82"
         elif disciplina == "70/50m krog + OK":
             bg_color = "yellow"
         elif disciplina == "Dvorana":
             bg_color = "#998AFF"
         elif disciplina == "Šolsko":
             bg_color = "orange"
+        elif disciplina == "900 krogov":
+            bg_color = "silver"
         else:
             bg_color = "white"
 
@@ -84,6 +117,18 @@ def csv_to_colored_pdf(csv_file, pdf_file):
 
     table_html += '</table>'
 
+    full_html = f"""
+        <html>
+        <head>
+            <meta charset="utf-8">
+        </head>
+        <body>
+            {header_html}
+            {table_html}
+        </body>
+        </html>
+        """
+
     options = {
         'page-size': 'A4',
         'orientation': 'Landscape',
@@ -97,9 +142,8 @@ def csv_to_colored_pdf(csv_file, pdf_file):
     wkhtml_path = r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'
     config = pdfkit.configuration(wkhtmltopdf=wkhtml_path) if os.path.exists(wkhtml_path) else None
 
-    pdfkit.from_string(table_html, pdf_file, options=options, configuration=config)
+    pdfkit.from_string(full_html, pdf_file, options=options, configuration=config)
     print(f"PDF ustvarjen: {pdf_file}")
-
 
 
 def save_to_csv(weekends, filepath):
@@ -122,14 +166,6 @@ def save_to_csv(weekends, filepath):
 
 
 def main():
-    # events = [
-    #    {"naziv": "Archery World Cup: Puebla 2026", "od": "07.04.2026", "do": "12.04.2026"},
-    #    {"naziv": "Archery World Cup: Shanghai 2026", "od": "05.05.2026", "do": "10.05.2026"},
-    #    {"naziv": "Archery World Cup: Antalya 2026", "od": "09.06.2026", "do": "14.06.2026"},
-    #    {"naziv": "Archery World Cup: Madrid 2026", "od": "07.07.2026", "do": "12.07.2026"},
-    #    {"naziv": "Arrowhead in 3D SP: Yankton 2026", "od": "24.09.2026", "do": "04.10.2026"},
-    #    {"naziv": "Youth olympics: Dakar 2026", "od": "31.10.2026", "do": "13.11.2026"}
-    # ]
 
     # Pot do datoteke
     pot_do_datoteke = "input/events.json"

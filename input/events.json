@@ -1,8 +1,41 @@
 [
     {
+        "naziv": "Priprave mladinske selekcije - tarčno",
+        "od": "14.03.2026",
+        "do": "15.03.2026"
+    },
+    {
+        "naziv": "Šentlok pokal 18m",
+        "od": "28.03.2026",
+        "do": "28.03.2026"
+    },
+   {
+        "naziv": "izbirno tekmovanje - tarčno",
+        "od": "27.03.2026",
+        "do": "29.03.2026"
+    },
+    {
         "naziv": "Archery World Cup: Puebla 2026",
         "od": "07.04.2026",
         "do": "12.04.2026"
+    },
+    {
+        "naziv": "izbirno tekmovanje - tarčno",
+        "od": "17.04.2026",
+        "do": "19.04.2026"
+    }, {
+        "naziv": "European Grand Prix - Antalya (TUR)",
+        "od": "20.04.2026",
+        "do": "26.04.2026"
+    }, {
+        "naziv": "izbirno tekmovanje - tarčno",
+        "od": "24.04.2026",
+        "do": "26.04.2026"
+    },
+    {
+        "naziv": "Priprave mladinske selekcije - tarčno",
+        "od": "25.04.2026",
+        "do": "26.04.2026"
     },
     {
         "naziv": "Archery World Cup: Shanghai 2026",
@@ -10,14 +43,57 @@
         "do": "10.05.2026"
     },
     {
+        "naziv": "Historično lokostrelstvo - Bled",
+        "od": "14.05.2026",
+        "do": "17.05.2026"
+    },{
+        "naziv": "European Outdoor Championships 2026 - Antalya (TUR)",
+        "od": "18.05.2026",
+        "do": "24.05.2026"
+    },
+    {
+        "naziv": "Veronikin pokal 2026",
+        "od": "28.05.2026",
+        "do": "31.05.2026"
+    },
+  {
+        "naziv": "Tarčno Evropsko prvenstvo",
+        "od": "18.05.2026",
+        "do": "24.05.2026"
+    },
+    {
+        "naziv": "European Youth Cup 1st Leg 2026 - Ruse (BUL)",
+        "od": "01.06.2026",
+        "do": "06.06.2026"
+    },{
         "naziv": "Archery World Cup: Antalya 2026",
         "od": "09.06.2026",
         "do": "14.06.2026"
+    },
+  {
+        "naziv": "AH in 3D tabor za mladino",
+        "od": "04.07.2026",
+        "do": "11.07.2026"
+    },
+  {
+        "naziv": "LZS Lokostrelski tabor Bohinj",
+        "od": "21.07.2026",
+        "do": "25.07.2026"
+    },
+    {
+        "naziv": "European Youth Championships 2026 (ITA)",
+        "od": "20.07.2026",
+        "do": "26.08.2026"
     },
     {
         "naziv": "Archery World Cup: Madrid 2026",
         "od": "07.07.2026",
         "do": "12.07.2026"
+    },
+    {
+        "naziv": "Sredozemske igre – Taranto (ITA)",
+        "od": "21.08.2026",
+        "do": "03.09.2026"
     },
     {
         "naziv": "Arrowhead and 3D SP: Yankton 2026",
@@ -29,9 +105,30 @@
         "od": "31.10.2026",
         "do": "13.11.2026"
     },
-    {
+     {
         "naziv": "zimske počitnice",
-        "od": "14.02.2026",
-        "do": "01.03.2026"
+        "od": "14.02.2027",
+        "do": "01.03.2027"
+    },
+  {
+        "naziv": "prvomajske počitnice",
+        "od": "27.04.2026",
+        "do": "03.05.2026"
+    },
+  {
+        "naziv": "poletne počitnice",
+        "od": "26.06.2026",
+        "do": "31.08.2026"
+    },
+     {
+        "naziv": "HDH Dolenjske toplice",
+        "od": "06.06.2026",
+        "do": "07.06.2026",
+       "organizator": "LK Dolenjske toplice"
+     },
+   {
+        "naziv": "Erazmovi viteški dnevi",
+        "od": "15.08.2026",
+        "do": "16.08.2026"
     }
 ]
