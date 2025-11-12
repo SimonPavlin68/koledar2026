@@ -2,7 +2,7 @@ import csv
 import json
 import os
 from calendar_generator import generate_weekends_by_day
-from config import START_YEAR, START_WEEK, END_YEAR, END_WEEK, OUTPUT_FILE, OUTPUT_FILE_PDF
+from config import START_YEAR, START_WEEK, END_YEAR, END_WEEK, OUTPUT_FILE, OUTPUT_FILE_PDF, INPUT_FILE_COMPETITIONS, INPUT_FILE_EVENTS
 import pdfkit
 import base64
 from datetime import datetime
@@ -86,7 +86,7 @@ def csv_to_colored_pdf(csv_file, pdf_file):
             bg_color = "#f28b82"
         elif disciplina.startswith("70/50m krog"):
             bg_color = "yellow"
-        elif disciplina == "Dvorana" or disciplina.startswith("Dvoranski krog"):
+        elif disciplina.startswith("Dvorana") or disciplina.startswith("Dvoranski krog"):
             bg_color = "#998AFF"
         elif disciplina == "Šolsko":
             bg_color = "orange"
@@ -165,13 +165,13 @@ def save_to_csv(weekends, filepath):
 def main():
 
     # Pot do datoteke
-    pot_do_datoteke = "input/events.json"
+    pot_do_datoteke = INPUT_FILE_EVENTS
 
     # Branje JSON datoteke
     with open(pot_do_datoteke, "r", encoding="utf-8") as f:
         events = json.load(f)
 
-    pot_do_datoteke2 = "input/competitions.json"
+    pot_do_datoteke2 = INPUT_FILE_COMPETITIONS
     with open(pot_do_datoteke2, "r", encoding="utf-8") as f:
         competitions = json.load(f)
 

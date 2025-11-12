@@ -17,7 +17,8 @@
     },
     {
         "od": "04.04.2026",
-        "disciplina": "3D krog"
+        "disciplina": "3D krog",
+        "organizator": "LK Gornji Grad"
     },
     {
         "od": "11.04.2026",
@@ -61,7 +62,8 @@
     },
     {
         "od": "13.06.2026",
-        "disciplina": "AH 12+12"
+        "disciplina": "AH 12+12",
+        "organizator": "LK Gornji Grad"
     },
     {
         "od": "20.06.2026",
@@ -89,26 +91,19 @@
     {
         "od": "29.08.2026",
         "disciplina": "AH 12+12",
-        "organizator": "DLLL Snežniška Diana"
-    },
-    {
-        "od": "12.09.2026",
-        "disciplina": "70/50m krog + OK",
-        "tekmovanje": "DP"
-    },
-     {
-        "od": "13.09.2026",
-        "disciplina": "70/50m krog + OK",
+        "organizator": "DLLL Snežniška Diana",
         "tekmovanje": "DP"
     },
     {
         "od": "05.09.2026",
-        "disciplina": "3D krog",
-        "tekmovanje": "DP"
+        "disciplina": "70/50m krog + OK",
+        "tekmovanje": "DP",
+        "organizator": "LK Kamnik"
     },
+
     {
-        "od": "19.09.2026",
-        "disciplina": "AH 12+12",
+        "od": "12.09.2026",
+        "disciplina": "3D krog",
         "tekmovanje": "DP"
     },
         {
