@@ -1,5 +1,31 @@
 [
     {
+        "od": "10.01.2026",
+        "disciplina": "Dvoranski krog",
+        "tekmovanje": "Dvoranski pokal 2026",
+        "organizator": "LK Ilirska Bistrica"
+    },{
+        "od": "25.01.2026",
+        "disciplina": "Dvoranski krog",
+        "tekmovanje": "Dvoranski pokal 2026",
+        "organizator": "TKD Sovica"
+    },{
+        "od": "07.02.2026",
+        "disciplina": "Dvoranski krog",
+        "tekmovanje": "Dvoranski pokal 2026",
+        "organizator": "LK Šenčur"
+    },{
+        "od": "21.02.2026",
+        "disciplina": "Dvoranski krog + OK",
+        "tekmovanje": "Dvoransko DP",
+        "organizator": "ŠD VLR Vilijem"
+    },{
+        "od": "22.02.2026",
+        "disciplina": "Dvoranski krog + OK",
+        "tekmovanje": "Dvoransko DP",
+        "organizator": "ŠD VLR Vilijem"
+    },
+    {
         "od": "14.03.2026",
         "disciplina": "3D krog"
     },
@@ -8,9 +34,8 @@
         "disciplina": "AH 12+12"
     },
      {
-        "od": "29.03.2026",
-        "disciplina": "Dvorana",
-        "tekmovanje": "DP 25m"
+        "od": "28.03.2026",
+        "disciplina": "Dvoranski krog"
     },
     {
         "od": "04.04.2026",
@@ -55,10 +80,6 @@
         "disciplina": "900 krogov",
         "tekmovanje": "DP"
     },
-     {
-        "od": "30.05.2026",
-        "disciplina": "3D krog"
-    },
     {
         "od": "13.06.2026",
         "disciplina": "AH 12+12"
@@ -74,6 +95,11 @@
      {
         "od": "22.08.2026",
         "disciplina": "70/50m krog + OK"
+    },
+    {
+        "od": "23.08.2026",
+        "disciplina": "70/50m krog -prilagojeno",
+        "tekmovanje": "mladinski pokal LZS"
     },
     {
         "od": "15.08.2026",
@@ -135,7 +161,7 @@
         "disciplina": "Dvorana"
     },
     {
-        "od": "30.01.2027",
+        "od": "31.01.2026",
         "disciplina": "Šolsko",
         "tekmovanje": "dvoransko - področno"
     },
@@ -150,11 +176,10 @@
         "tekmovanje": "DP 18m"
     },
     {
-        "od": "07.02.2027",
+        "od": "14.02.2026",
         "disciplina": "Šolsko",
         "tekmovanje": "dvoransko - DP"
-    },
-    {
+    },{
         "od": "07.03.2027",
         "disciplina": "Dvorana",
         "tekmovanje": "DP 25m"

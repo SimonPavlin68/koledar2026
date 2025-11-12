@@ -14,71 +14,79 @@ def get_base64_image(path):
 
 
 def csv_to_colored_pdf(csv_file, pdf_file):
+    import csv, os
+    from datetime import datetime
+    import pdfkit
+
+    # Naloži vse vrstice
     with open(csv_file, newline='', encoding='utf-8') as f:
         reader = csv.DictReader(f, delimiter=';')
         rows = list(reader)
 
-    # Preštej, koliko zaporednih vrstic ima isti teden
+    # Štetje vrstic za rowspan
     teden_count = {}
+    opombe_count = {}
+
     for row in rows:
-        t = row["TEDEN"]
-        teden_count[t] = teden_count.get(t, 0) + 1
+        t = row["TEDEN"].strip()
+        datum = row.get("DATUM", "").strip()
+        # Ključ vključuje leto (da se tedni iz različnih let ne združijo)
+        leto = datum[-4:] if len(datum) >= 4 else "0000"
+        t_key = f"{t}_{leto}"
 
-        # ✅ Logo za header (v base64)
-        logo_path = os.path.join(os.path.dirname(__file__), 'static', 'images', 'logo.png')
-        logo_base64 = get_base64_image(logo_path)
+        op = row.get("OPOMBE", "").strip()
 
-        current_date = datetime.now().strftime("%d.%m.%Y")
+        teden_count[t_key] = teden_count.get(t_key, 0) + 1
+        opombe_count[(t_key, op)] = opombe_count.get((t_key, op), 0) + 1
 
-        # Glava HTML-ja z logotipom in naslovom
+    # Logo za header
+    logo_path = os.path.join(os.path.dirname(__file__), 'static', 'images', 'logo.png')
+    logo_base64 = get_base64_image(logo_path)
+    current_date = datetime.now().strftime("%d.%m.%Y")
 
-        header_html = f"""
-        <table style="width:100%; border-collapse:collapse; margin-bottom:10px;">
-          <tr style="vertical-align:middle;">
-            <td style="width:20%; text-align:left; padding-left:20px;">
-              <img src="data:image/png;base64,{logo_base64}" alt="Logo" style="height:75px; vertical-align:middle;">
-            </td>
-            <td style="width:60%; text-align:center;">
-              <h2 style="margin:0; font-family:Arial, sans-serif;">Predlog koledarja 2026</h2>
-            </td>
-            <td style="width:20%; text-align:right; padding-right:20px; font-family:Arial, sans-serif; font-size:14px; color:silver;">
-              {current_date}
-            </td>
-          </tr>
-        </table>
-        """
+    header_html = f"""
+    <table style="width:100%; border-collapse:collapse; margin-bottom:10px;">
+      <tr style="vertical-align:middle;">
+        <td style="width:20%; text-align:left; padding-left:20px;">
+          <img src="data:image/png;base64,{logo_base64}" alt="Logo" style="height:75px; vertical-align:middle;">
+        </td>
+        <td style="width:60%; text-align:center;">
+          <h2 style="margin:0; font-family:Arial, sans-serif;">Predlog koledarja 2026</h2>
+        </td>
+        <td style="width:20%; text-align:right; padding-right:20px; font-family:Arial, sans-serif; font-size:14px; color:silver;">
+          {current_date}
+        </td>
+      </tr>
+    </table>
+    """
 
-    # Za generiranje HTML tabele
+    # Gradnja HTML tabele
     table_html = '<table border="1" cellspacing="0" cellpadding="5" style="border-collapse: collapse; width: 100%;">'
-
-    # Glava tabele
     table_html += '<tr>'
     for header in reader.fieldnames:
         table_html += f'<th>{header}</th>'
     table_html += '</tr>'
 
-    # Sledimo, koliko vrstic tedna smo že izpisali
-    teden_done = {}
-
-    # Sledimo, koliko vrstic imamo za vsako kombinacijo TEDEN + OPOMBE
-    # Sledimo, koliko vrstic imamo za vsako kombinacijo TEDEN + OPOMBE
-    opombe_count = {}
-    for row in rows:
-        key = (row["TEDEN"], row.get("OPOMBE", ""))
-        opombe_count[key] = opombe_count.get(key, 0) + 1
-
-    opombe_done = {}
+    teden_done = set()
+    opombe_done = set()
 
     for row in rows:
+        t = row["TEDEN"].strip()
+        datum = row.get("DATUM", "").strip()
+        leto = datum[-4:] if len(datum) >= 4 else "0000"
+        t_key = f"{t}_{leto}"
+
+        op = row.get("OPOMBE", "").strip()
         disciplina = row.get("DISCIPLINA", "").strip()
-        # barvanje samo za ostale celice, OPOMBE in TEDEN brez barve
+
+        # Barvanje glede na disciplino
         if disciplina == "AH 12+12":
             bg_color = "lightgreen"
         elif disciplina == "3D krog":
             bg_color = "#f28b82"
-        elif disciplina == "70/50m krog + OK":
+        elif disciplina.startswith("70/50m krog"):
             bg_color = "yellow"
-        elif disciplina == "Dvorana":
+        elif disciplina == "Dvorana" or disciplina.startswith("Dvoranski krog"):
             bg_color = "#998AFF"
         elif disciplina == "Šolsko":
             bg_color = "orange"
@@ -87,47 +95,36 @@ def csv_to_colored_pdf(csv_file, pdf_file):
         else:
             bg_color = "white"
 
-        table_html += '<tr>'
+        table_html += "<tr>"
 
-        # TEDEN z rowspan (brez barve)
-        t = row["TEDEN"]
-        if t not in teden_done:
-            rowspan = teden_count[t]
-            table_html += f'<td rowspan="{rowspan}">{t}</td>'
-            teden_done[t] = 1
-        else:
-            teden_done[t] += 1
+        # Prvi stolpec: TEDEN (s rowspan)
+        if t_key not in teden_done:
+            table_html += f'<td rowspan="{teden_count[t_key]}" style="vertical-align:top;">{t}</td>'
+            teden_done.add(t_key)
 
-        # ostali stolpci z barvo, razen TEDEN in OPOMBE
+        # Srednji stolpci (DATUM ... TEKMOVANJE)
         for header in reader.fieldnames:
             if header not in ["TEDEN", "OPOMBE"]:
-                table_html += f'<td style="background-color:{bg_color}">{row.get(header, "")}</td>'
+                cell_value = row.get(header, "")
+                table_html += f'<td style="background-color:{bg_color}; vertical-align:top;">{cell_value}</td>'
 
-        # OPOMBE z rowspan (brez barve)
-        opombe = row.get("OPOMBE", "")
-        key = (t, opombe)
+        # Zadnji stolpec: OPOMBE (s rowspan)
+        key = (t_key, op)
         if key not in opombe_done:
             rowspan = opombe_count[key]
-            table_html += f'<td rowspan="{rowspan}">{opombe}</td>'
-            opombe_done[key] = 1
-        else:
-            opombe_done[key] += 1
+            table_html += f'<td rowspan="{rowspan}" style="vertical-align:top;">{op}</td>'
+            opombe_done.add(key)
 
-        table_html += '</tr>'
+        table_html += "</tr>"
 
-    table_html += '</table>'
+    table_html += "</table>"
 
     full_html = f"""
-        <html>
-        <head>
-            <meta charset="utf-8">
-        </head>
-        <body>
-            {header_html}
-            {table_html}
-        </body>
-        </html>
-        """
+    <html>
+      <head><meta charset="utf-8"></head>
+      <body>{header_html}{table_html}</body>
+    </html>
+    """
 
     options = {
         'page-size': 'A4',
@@ -139,11 +136,11 @@ def csv_to_colored_pdf(csv_file, pdf_file):
         'margin-right': '10mm',
     }
 
-    wkhtml_path = r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'
+    wkhtml_path = r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"
     config = pdfkit.configuration(wkhtmltopdf=wkhtml_path) if os.path.exists(wkhtml_path) else None
 
     pdfkit.from_string(full_html, pdf_file, options=options, configuration=config)
-    print(f"PDF ustvarjen: {pdf_file}")
+    print(f"✅ PDF ustvarjen: {pdf_file}")
 
 
 def save_to_csv(weekends, filepath):

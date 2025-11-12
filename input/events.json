@@ -1,13 +1,21 @@
 [
     {
+        "naziv": "Nîmes Archery 2026",
+        "od": "15.01.2026",
+        "do": "18.01.2026"
+    },{
+        "naziv": "European Indoor Championships 2026 - Plovdiv (BUL)",
+        "od": "16.02.2026",
+        "do": "21.02.2026"
+    },{
         "naziv": "Priprave mladinske selekcije - tarčno",
         "od": "14.03.2026",
         "do": "15.03.2026"
     },
     {
         "naziv": "Šentlok pokal 18m",
-        "od": "28.03.2026",
-        "do": "28.03.2026"
+        "od": "29.03.2026",
+        "do": "29.03.2026"
     },
    {
         "naziv": "izbirno tekmovanje - tarčno",
@@ -80,10 +88,15 @@
         "od": "21.07.2026",
         "do": "25.07.2026"
     },
+   {
+        "naziv": "LZS Lokostrelski tabor Bohinj",
+        "od": "21.07.2026",
+        "do": "25.07.2026"
+    },
     {
         "naziv": "European Youth Championships 2026 (ITA)",
         "od": "20.07.2026",
-        "do": "26.08.2026"
+        "do": "26.07.2026"
     },
     {
         "naziv": "Archery World Cup: Madrid 2026",
