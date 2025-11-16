@@ -13,15 +13,29 @@
         "disciplina": "Dvoranski krog",
         "tekmovanje": "Dvoranski pokal 2026",
         "organizator": "LK Šenčur"
+    },
+        {
+        "od": "01.02.2026",
+        "disciplina": "Šolsko tekmovanje",
+        "tekmovanje": "Šolsko dvoransko področno ZAHOD",
+        "organizator": "LK Budanje"
+    },
+     {
+        "od": "31.01.2026",
+        "disciplina": "Šolsko tekmovanje",
+        "tekmovanje": "Šolsko dvoransko področno VZHOD",
+        "organizator": "LK Muta"
+    },
+        {
+        "od": "14.02.2026",
+        "disciplina": "Šolsko tekmovanje",
+        "tekmovanje": "Šolsko dvoransko državno tekmovanje",
+        "organizator": "LK Muta"
     },{
         "od": "21.02.2026",
+        "do": "22.02.2026",
         "disciplina": "Dvoranski krog + OK",
-        "tekmovanje": "Dvoransko DP",
-        "organizator": "ŠD VLR Vilijem"
-    },{
-        "od": "22.02.2026",
-        "disciplina": "Dvoranski krog + OK",
-        "tekmovanje": "Dvoransko DP",
+        "tekmovanje": "državno prvenstvo",
         "organizator": "ŠD VLR Vilijem"
     },
     {
@@ -37,7 +51,7 @@
      {
         "od": "28.03.2026",
         "disciplina": "Dvorana 25m",
-        "tekmovanje": "DP",
+        "tekmovanje": "državno prvenstvo",
         "organizator": "Društvo Šentlok"
     },
     {
@@ -47,24 +61,36 @@
     },
     {
         "od": "11.04.2026",
-        "disciplina": "AH 12+12"
+        "disciplina": "3D krog",
+        "organizator": "LK Muta"
     },
     {
         "od": "18.04.2026",
-        "disciplina": "70/50m krog + OK"
+        "disciplina": "70/50m krog",
+        "organizator": "LK Šenčur"
     },
     {
         "od": "25.04.2026",
-        "disciplina": "3D krog"
+        "disciplina": "3D krog",
+        "organizator": "ŠD VLR Vilijem"
     },
     {
-        "od": "02.05.2026",
-        "disciplina": "70/50m krog + OK"
+        "od": "03.05.2026",
+        "disciplina": "3D krog",
+        "organizator": "DLLL Snežniška Diana",
+        "kraj": "???"
     },
     {
         "od": "10.05.2026",
-        "disciplina": "Šolsko",
-        "tekmovanje": "področno"
+        "disciplina": "Šolsko tekmovanje",
+        "tekmovanje": "olsko zunanje področno VZHOD",
+        "organizator": "LK Maribor"
+    },
+    {
+        "od": "10.05.2026",
+        "disciplina": "Šolsko tekmovanje",
+        "tekmovanje": "olsko zunanje področno ZAHOD",
+        "organizator": "DLLL Snežniška Diana"
     },
     {
         "od": "09.05.2026",
@@ -73,17 +99,21 @@
     },
      {
         "od": "16.05.2026",
-        "disciplina": "70/50m krog + OK"
+        "disciplina": "70/50m krog + OK",
+        "organizator": "LK Lendava",
+        "tekmovanje": "CEC"
      },
     {
         "od": "23.05.2026",
-        "disciplina": "Šolsko",
-        "tekmovanje": "DP"
+        "disciplina": "Šolsko tekmovanje",
+        "tekmovanje": "olsko zunanje državno tekmovanje",
+        "organizator": "LK MINS Postojna"
     },
     {
         "od": "24.05.2026",
         "disciplina": "900 krogov",
-        "tekmovanje": "DP"
+        "tekmovanje": "državno prvenstvo",
+        "organizator": "LK MINS Postojna"
     },
     {
         "od": "13.06.2026",
@@ -92,24 +122,26 @@
     },
     {
         "od": "20.06.2026",
-        "disciplina": "70/50m krog + OK",
+        "disciplina": "70/50m krog",
         "organizator": "LK Maribor"
     },
     {
         "od": "27.06.2026",
-        "disciplina": "3D krog"
+        "disciplina": "3D krog",
+        "organizator": "LK Turjak"
+    },
+    {
+        "od": "04.07.2026",
+        "disciplina": "70/50m krog",
+        "organizator": "TKD Sovica"
     },
      {
         "od": "22.08.2026",
-        "disciplina": "70/50m krog + OK"
+        "disciplina": "70/50m krog",
+        "organizator": "LD Logatec"
     },
     {
         "od": "23.08.2026",
-        "disciplina": "70/50m krog -prilagojeno",
-        "tekmovanje": "mladinski pokal LZS"
-    },
-    {
-        "od": "15.08.2026",
         "disciplina": "3D krog",
         "organizator": "LK DLL Potens"
     },
@@ -117,19 +149,20 @@
         "od": "29.08.2026",
         "disciplina": "AH 12+12",
         "organizator": "DLLL Snežniška Diana",
-        "tekmovanje": "DP"
+        "tekmovanje": "državno prvenstvo"
     },
     {
-        "od": "05.09.2026",
+        "od": "19.09.2026",
         "disciplina": "70/50m krog + OK",
-        "tekmovanje": "DP",
+        "tekmovanje": "državno prvenstvo",
         "organizator": "LK Kamnik"
     },
 
     {
         "od": "12.09.2026",
         "disciplina": "3D krog",
-        "tekmovanje": "DP"
+        "tekmovanje": "državno prvenstvo",
+        "organizator": "LK Lendava"
     },
         {
         "od": "11.07.2026",
@@ -152,11 +185,13 @@
     },
      {
         "od": "19.12.2026",
-        "disciplina": "Dvorana"
+        "disciplina": "Dvorana",
+        "organizator": "LK Ilirska Bistrica"
     },
      {
         "od": "09.01.2027",
-        "disciplina": "Dvorana"
+        "disciplina": "Dvorana",
+         "organizator": "LK Muta"
     },
     {
         "od": "23.01.2027",
@@ -164,35 +199,15 @@
         "organizator": "ŠD VLR Vilijem"
     },
     {
-        "od": "06.02.2027",
+        "od": "07.02.2027",
         "disciplina": "Dvorana",
         "organizator": "TKD Sovica"
     },
     {
-        "od": "01.02.2026",
-        "disciplina": "Šolsko",
-        "tekmovanje": "dvoransko - področno/zahod",
-        "organizator": "LK Budanje"
-    },
-    {
         "od": "20.02.2027",
+        "do": "21.02.2027",
         "disciplina": "Dvorana",
-        "tekmovanje": "DP 18m",
+        "tekmovanje": "državno prvenstvo - 18m",
         "organizator": "LK Šenčur"
-    },
-    {
-        "od": "21.02.2027",
-        "disciplina": "Dvorana",
-        "tekmovanje": "DP 18m",
-        "organizator": "LK Šenčur"
-    },
-    {
-        "od": "14.02.2026",
-        "disciplina": "Šolsko",
-        "tekmovanje": "dvoransko - DP"
-    },{
-        "od": "07.03.2027",
-        "disciplina": "Dvorana",
-        "tekmovanje": "DP 25m"
     }
 ]
