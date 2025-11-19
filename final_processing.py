@@ -2,6 +2,7 @@ import pdfkit
 from datetime import datetime
 import base64
 
+version = 4
 
 def get_base64_image(path):
     with open(path, "rb") as img_file:
@@ -29,12 +30,8 @@ def json_to_colored_pdf(data, pdf_file):
 
     footer_html = f"""
         <table style="width:100%; border-collapse:collapse; margin-top:20px;">
-          
           <tr>
           <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">* organizator še ni potrdil</td>
-          </tr>
-          <tr>
-          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">** predviden organizator: LK Muta ne more zagotoviti dvorane</td>
           </tr>
           <tr>
           <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">*** predviden organizator: LK Kamnik ne more zagotoviti strelišča</td>
@@ -43,7 +40,7 @@ def json_to_colored_pdf(data, pdf_file):
         <table style="width:100%; border-collapse:collapse; margin-top:50px;">
         <tr>
             <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:8px; color:silver;">
-                © 2026 Lokostrelska zveza Slovenije – koledar V3 (verzija za interne potrebe)
+                © 2026 Lokostrelska zveza Slovenije – koledar V{version} (verzija za interne potrebe)
             </td>
             <td style="width:20%; text-align:right; padding-right:20px; font-family:Arial, sans-serif; font-size:8px; color:silver;">
           generirano: {current_date}
@@ -178,7 +175,7 @@ def main():
     combined_events = competitions + extra_events
 
     # generiranje PDF koledarja
-    json_to_colored_pdf(combined_events, "output/koledar_tekem-final-3.pdf")
+    json_to_colored_pdf(combined_events, f"output/koledar_tekem-final-{version}.pdf")
     print("PDF generiran.")
 
 if __name__ == "__main__":

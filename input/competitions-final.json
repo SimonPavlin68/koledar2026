@@ -13,24 +13,21 @@
         "disciplina": "Dvoranski krog",
         "tekmovanje": "Dvoranski pokal 2026",
         "organizator": "LK Šenčur"
-    },
-        {
+    },{
+        "od": "08.02.2026",
+        "disciplina": "Šolsko tekmovanje",
+        "tekmovanje": "Šolsko dvoransko državno tekmovanje",
+        "organizator": "LK Šenčur"
+    },{
         "od": "01.02.2026",
         "disciplina": "Šolsko tekmovanje",
         "tekmovanje": "Šolsko dvoransko področno ZAHOD",
         "organizator": "LK Budanje"
-    },
-     {
+    },{
         "od": "31.01.2026",
         "disciplina": "Šolsko tekmovanje",
         "tekmovanje": "Šolsko dvoransko področno VZHOD",
         "organizator": "LK Muta"
-    },
-        {
-        "od": "14.02.2026",
-        "disciplina": "Šolsko tekmovanje",
-        "tekmovanje": "Šolsko dvoransko državno tekmovanje",
-        "organizator": "**"
     },{
         "od": "21.02.2026",
         "do": "22.02.2026",
@@ -77,8 +74,8 @@
     {
         "od": "18.04.2026",
         "disciplina": "70/50m krog",
-        "tekmovanje": "Tarčni pokal",
-        "organizator": "LK Šenčur"
+        "organizator": "LK Lendava",
+        "tekmovanje": "CEC in Tarčni pokal"
     },
     {
         "od": "25.04.2026",
@@ -113,8 +110,8 @@
      {
         "od": "16.05.2026",
         "disciplina": "70/50m krog + OK",
-        "organizator": "LK Lendava",
-        "tekmovanje": "CEC in Tarčni pokal"
+        "organizator": "LK Šenčur",
+        "tekmovanje": "Tarčni pokal"
      },
     {
         "od": "23.05.2026",
