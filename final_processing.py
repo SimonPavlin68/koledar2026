@@ -2,7 +2,7 @@ import pdfkit
 from datetime import datetime
 import base64
 
-version = 4
+version = "4b"
 
 def get_base64_image(path):
     with open(path, "rb") as img_file:
@@ -31,10 +31,13 @@ def json_to_colored_pdf(data, pdf_file):
     footer_html = f"""
         <table style="width:100%; border-collapse:collapse; margin-top:20px;">
           <tr>
-          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">* organizator še ni potrdil</td>
+          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">* planirani organizator ni dobil strelišča</td>
           </tr>
           <tr>
-          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">*** predviden organizator: LK Kamnik ne more zagotoviti strelišča</td>
+          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">** LK Muta ni dobil dvorane, organizira LK Šenčur</td>
+          </tr>
+          <tr>
+          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">*** organizator: LK Kamnik ne more zagotoviti strelišča, lahko organizira TKD Sovica</td>
           </tr>
         </table>
         <table style="width:100%; border-collapse:collapse; margin-top:50px;">
@@ -69,11 +72,14 @@ def json_to_colored_pdf(data, pdf_file):
         <th style="border: 1px solid black;">KRAJ</th>
         <th style="border: 1px solid black;">ORGANIZATOR</th>
         <th style="border: 1px solid black;">TEKMOVANJE</th>
+        <th style="border: 1px solid black;">I@nseo id</th>
       </tr>
     """
 
     # Barvanje glede na disciplino
-    def barva_disciplina(disciplina):
+    def barva_disciplina(disciplina, organizator):
+        if not organizator:
+            return "white"
         if disciplina == "AH 12+12":
             return "lightgreen"
         elif disciplina == "3D krog":
@@ -95,24 +101,26 @@ def json_to_colored_pdf(data, pdf_file):
     for row in data_sorted:
         disciplina = (row.get("disciplina") or "").strip()
         tekmovanje = row.get("tekmovanje", "")
+        organizator = row.get("organizator", "")
         if tekmovanje == "Veronikin pokal 2026":
             bgcolor = "#DDDDDD"
         else:
-            bgcolor = barva_disciplina(disciplina)
+            bgcolor = barva_disciplina(disciplina, organizator)
 
         od_val = row.get("od", "")
         do_raw = row.get("do", "")
 
         # Če sta od in do enaka → do je prazen
         do_val = "" if do_raw == od_val else do_raw
-
+        id = (row.get("ianseo_id") or "").strip()
         table_html += f'<tr style="background-color:{bgcolor};">'
         table_html += f'<td style="border:1px solid black; vertical-align:top;">{od_val}</td>'
         table_html += f'<td style="border:1px solid black; vertical-align:top;">{do_val}</td>'
         table_html += f'<td style="border:1px solid black; vertical-align:top;">{disciplina}</td>'
         table_html += f'<td style="border:1px solid black; vertical-align:top;">{row.get("kraj", "")}</td>'
-        table_html += f'<td style="border:1px solid black; vertical-align:top;">{row.get("organizator", "")}</td>'
+        table_html += f'<td style="border:1px solid black; vertical-align:top;">{organizator}</td>'
         table_html += f'<td style="border:1px solid black; vertical-align:top;">{tekmovanje}</td>'
+        table_html += f'<td style="border:1px solid black; vertical-align:top;">{id}</td>'
         table_html += "</tr>"
 
     table_html += "</table>"

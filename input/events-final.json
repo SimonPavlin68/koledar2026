@@ -59,6 +59,7 @@
     {
         "tekmovanje": "Veronikin pokal 2026",
         "kraj": "Kamnik",
+        "organizator": "LK Kamnik",
         "disciplina": "70/50m krog + OK",
         "od": "28.05.2026",
         "do": "31.05.2026"
@@ -118,5 +119,31 @@
         "kraj":"Dakar (SEN)",
         "od": "31.10.2026",
         "do": "13.11.2026"
+    }, {
+        "od": "09.05.2026",
+        "disciplina": "70/50m krog",
+        "kraj": "Srbija",
+        "tekmovanje": "CEC - 2. krog"
+    },{
+        "od": "20.06.2026",
+        "disciplina": "70/50m krog",
+        "kraj": "Hrvaška",
+        "tekmovanje": "CEC - 3. krog"
+    },{
+        "od": "04.07.2026",
+        "disciplina": "70/50m krog",
+        "kraj": "Slovaška",
+        "tekmovanje": "CEC - 4. krog"
+    },{
+        "od": "23.08.2026",
+        "disciplina": "70/50m krog",
+        "kraj": "Avstrija",
+        "tekmovanje": "CEC - 5. krog"
+    },{
+        "od": "12.09.2026",
+        "do": "13.09.2026",
+        "disciplina": "70/50m krog",
+        "kraj": "Madžarska",
+        "tekmovanje": "CEC - finale"
     }
-  ]
+]
