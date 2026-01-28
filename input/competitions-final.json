@@ -23,7 +23,7 @@
         "od": "08.02.2026",
         "disciplina": "Šolsko tekmovanje",
         "tekmovanje": "Šolsko dvoransko državno tekmovanje",
-        "organizator": "LK Šenčur **",
+        "organizator": "LK Šenčur",
         "ianseo_id": "2026006",
         "kraj": "Šenčur"
     },{
@@ -194,18 +194,11 @@
         "kraj": "Turjak"
     },
     {
-        "od": "04.07.2026",
-        "disciplina": "70/50m krog",
-        "tekmovanje": "Tarčni pokal",
-        "organizator": "*",
-        "ianseo_id": "2026026"
-    },
-    {
         "od": "11.07.2026",
         "disciplina": "AH 12+12",
         "tekmovanje": "AH pokal",
         "organizator": "Društvo Šentlok",
-        "ianseo_id": "2026027",
+        "ianseo_id": "2026026",
         "kraj": "Boč"
     },
     {
@@ -213,7 +206,7 @@
         "disciplina": "70/50m krog",
         "tekmovanje": "Tarčni pokal",
         "organizator": "LD Logatec",
-        "ianseo_id": "2026028",
+        "ianseo_id": "2026027",
         "kraj": "Logatec"
     },
     {
@@ -221,7 +214,7 @@
         "disciplina": "3D krog",
         "tekmovanje": "3D pokal",
         "organizator": "LK DLL Potens",
-        "ianseo_id": "2026029",
+        "ianseo_id": "2026028",
         "kraj": "Grad Mokrice"
     },
     {
@@ -229,31 +222,31 @@
         "disciplina": "AH 12+12",
         "tekmovanje": "Državno prvenstvo in AH pokal",
         "organizator": "DLLL Snežniška Diana",
-        "ianseo_id": "2026030",
+        "ianseo_id": "2026029",
         "kraj": "Kozarišče"
+    },
+        {
+        "od": "12.09.2026",
+        "disciplina": "3D krog",
+        "tekmovanje": "Državno prvenstvo",
+        "organizator": "LK Lendava",
+        "ianseo_id": "2026030",
+        "kraj": "Lendava"
     },
     {
         "od": "19.09.2026",
         "disciplina": "70/50m krog + OK",
         "tekmovanje": "Državno prvenstvo",
-        "organizator": "TKD Sovica ***",
-        "ianseo_id": "2026032",
-        "kraj": "Rakek"
-    },
-    {
-        "od": "12.09.2026",
-        "disciplina": "3D krog",
-        "tekmovanje": "Državno prvenstvo",
-        "organizator": "LK Lendava",
+        "organizator": "TKD Sovica",
         "ianseo_id": "2026031",
-        "kraj": "Lendava"
+        "kraj": "Rakek"
     },
     {
         "od": "08.11.2026",
         "disciplina": "Dvoranski krog",
         "tekmovanje": "Dvoranski pokal 2027",
         "organizator": "LK Budanje",
-        "ianseo_id": "2026033",
+        "ianseo_id": "2026032",
         "kraj": "Ajdovščina"
     },
     {
@@ -261,7 +254,7 @@
         "disciplina": "Dvoranski krog",
         "tekmovanje": "Dvoranski pokal 2027",
         "organizator": "LK DLL Potens",
-        "ianseo_id": "2026034",
+        "ianseo_id": "2026033",
         "kraj": "Vrhnika"
     },
     {
@@ -269,7 +262,7 @@
         "disciplina": "Dvoranski krog",
         "tekmovanje": "Dvoranski pokal 2027",
         "organizator": "LK MINS Postojna",
-        "ianseo_id": "2026035",
+        "ianseo_id": "2026034",
         "kraj": "Postojna"
     },
     {

@@ -2,7 +2,7 @@ import pdfkit
 from datetime import datetime
 import base64
 
-version = "4b"
+version = "5"
 
 def get_base64_image(path):
     with open(path, "rb") as img_file:
@@ -16,21 +16,26 @@ def json_to_colored_pdf(data, pdf_file):
     current_date = datetime.now().strftime("%d.%m.%Y %H:%M:%S")
 
     header_html = f"""
-    <table style="width:100%; border-collapse:collapse; margin-bottom:10px;">
-      <tr style="vertical-align:middle;">
-        <td style="width:20%; text-align:left; padding-left:20px;">
-          <img src="data:image/png;base64,{logo_base64}" alt="Logo" style="height:60px; vertical-align:middle;">
-        </td>
-        <td style="width:60%; text-align:center;">
-          <h3 style="margin:0; font-family:Arial, sans-serif;">Koledar tekmovanj za leto 2026</h3>
-        </td>
-      </tr>
-    </table>
+   <table style="width:100%; border-collapse:collapse; margin-bottom:10px;">
+  <tr>
+    <td style="width:20%; text-align:left; padding-left:20px; vertical-align:middle;">
+      <img src="data:image/png;base64,{logo_base64}" alt="Logo" style="height:60px; vertical-align:middle;">
+    </td>
+    <td style="width:60%; text-align:center; vertical-align:middle;">
+      <h3 style="margin:0; font-family:Arial, sans-serif; margin-left:-150px;">
+        Koledar tekmovanj za leto 2026
+      </h3>
+    </td>
+  </tr>
+</table>
+
+
+
     """
 
     footer_html = f"""
         <table style="width:100%; border-collapse:collapse; margin-top:20px;">
-          <tr>
+          <!--tr>
           <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">* planirani organizator ni dobil strelišča</td>
           </tr>
           <tr>
@@ -38,7 +43,9 @@ def json_to_colored_pdf(data, pdf_file):
           </tr>
           <tr>
           <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">*** organizator: LK Kamnik ne more zagotoviti strelišča, lahko organizira TKD Sovica</td>
-          </tr>
+          </tr-->
+          <tr>
+          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">Koledar potrjen na izredni seji IO 27.1.2026</td></tr>
         </table>
         <table style="width:100%; border-collapse:collapse; margin-top:50px;">
         <tr>
