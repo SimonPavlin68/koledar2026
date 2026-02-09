@@ -55,6 +55,9 @@ def json_to_colored_pdf(data, pdf_file):
             <td style="width:20%; text-align:right; padding-right:20px; font-family:Arial, sans-serif; font-size:8px; color:silver;">
           generirano: {current_date}
         </td>
+         <tr>
+            <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:8px; color:white;">Simon</td>
+            <td style="width:20%; text-align:right; padding-right:20px; font-family:Arial, sans-serif; font-size:8px; color:white;"></td>
           </tr>
           
         </table>
