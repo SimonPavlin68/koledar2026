@@ -2,7 +2,7 @@ import pdfkit
 from datetime import datetime
 import base64
 
-version = "5"
+version = "6"
 
 def get_base64_image(path):
     with open(path, "rb") as img_file:
@@ -35,17 +35,17 @@ def json_to_colored_pdf(data, pdf_file):
 
     footer_html = f"""
         <table style="width:100%; border-collapse:collapse; margin-top:20px;">
-          <!--tr>
-          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">* planirani organizator ni dobil strelišča</td>
+          <tr>
+          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">* Termini so bili določeni s strani Strokovnega sveta v koledarju 2025.</td>
           </tr>
           <tr>
-          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">** LK Muta ni dobil dvorane, organizira LK Šenčur</td>
+          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">** prestavljen datum 18.4. -> 19.4.</td>
           </tr>
           <tr>
-          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">*** organizator: LK Kamnik ne more zagotoviti strelišča, lahko organizira TKD Sovica</td>
-          </tr-->
+          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">*** prestavljen datum 20.6. -> 21.6.</td>
+          </tr>
           <tr>
-          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">Koledar potrjen na izredni seji IO 27.1.2026</td></tr>
+          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">Koledar potrjen na 3. redni seji IO 17.2.2026</td></tr>
         </table>
         <table style="width:100%; border-collapse:collapse; margin-top:50px;">
         <tr>
@@ -56,7 +56,7 @@ def json_to_colored_pdf(data, pdf_file):
           generirano: {current_date}
         </td>
          <tr>
-            <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:8px; color:white;">Simon</td>
+            <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:8px; color:white;">by Simon</td>
             <td style="width:20%; text-align:right; padding-right:20px; font-family:Arial, sans-serif; font-size:8px; color:white;"></td>
           </tr>
           

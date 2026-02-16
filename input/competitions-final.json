@@ -4,21 +4,21 @@
         "tekmovanje": "Dvoranski pokal 2026",
         "organizator": "LK Ilirska Bistrica",
         "ianseo_id": "2026001",
-        "kraj": "Ilirska Bistrica"
+        "kraj": "Ilirska Bistrica *"
     },{
         "od": "25.01.2026",
         "disciplina": "Dvoranski krog",
         "tekmovanje": "Dvoranski pokal 2026",
         "organizator": "TKD Sovica",
         "ianseo_id": "2026002",
-        "kraj": "Rakek"
+        "kraj": "Rakek *"
     },{
         "od": "07.02.2026",
         "disciplina": "Dvoranski krog",
         "tekmovanje": "Dvoranski pokal 2026",
         "organizator": "LK Šenčur",
         "ianseo_id": "2026005",
-        "kraj": "Šenčur"
+        "kraj": "Šenčur *"
     },{
         "od": "08.02.2026",
         "disciplina": "Šolsko tekmovanje",
@@ -47,7 +47,7 @@
         "tekmovanje": "Državno prvenstvo",
         "organizator": "ŠD VLR Vilijem",
         "ianseo_id": "2026007",
-        "kraj": "Vrhnika"
+        "kraj": "Vrhnika *"
     },
     {
         "od": "14.03.2026",
@@ -106,10 +106,10 @@
         "kraj": "Lendava"
     },
     {
-        "od": "18.04.2026",
+        "od": "19.04.2026",
         "disciplina": "3D krog",
         "tekmovanje": "3D pokal",
-        "organizator": "ŠD VLR Vilijem",
+        "organizator": "ŠD VLR Vilijem *",
         "ianseo_id": "2026014",
         "kraj": "Vrhnika"
     },
@@ -178,10 +178,10 @@
         "kraj": "Gornji Grad"
     },
     {
-        "od": "20.06.2026",
+        "od": "21.06.2026",
         "disciplina": "70/50m krog",
         "tekmovanje": "Tarčni pokal",
-        "organizator": "LK Maribor",
+        "organizator": "LK Maribor **",
         "ianseo_id": "2026024",
         "kraj": "Maribor"
     },
