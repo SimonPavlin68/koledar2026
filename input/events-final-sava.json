@@ -64,6 +64,12 @@
         "od": "28.05.2026",
         "do": "31.05.2026"
     },
+  {
+        "tekmovanje": "European Outdoor Championships 2026",
+        "kraj":"Antalya (TUR)",
+        "od": "18.05.2026",
+        "do": "24.05.2026"
+    },
     {
         "tekmovanje": "European Youth Cup 1st Leg 2026",
         "kraj": "Ruse (BUL)",
@@ -79,7 +85,7 @@
         "tekmovanje": "Sava 3D pokal - 1.krog",
         "kraj": "Divčibare (Srbija)",
         "disciplina": "3D krog",
-        "od": "20.06.2026"
+        "od": "21.06.2026"
     },{
         "tekmovanje": "Sava 3D pokal - 2.krog",
         "kraj": "Bjelovar (Hrvaška)",

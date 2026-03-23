@@ -2,13 +2,11 @@ import pdfkit
 from datetime import datetime
 import base64
 
-version = "7"
-
+version = "6"
 
 def get_base64_image(path):
     with open(path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode('utf-8')
-
 
 def json_to_colored_pdf(data, pdf_file):
     # --- Header (logo + naslov + datum) ---
@@ -37,17 +35,21 @@ def json_to_colored_pdf(data, pdf_file):
 
     footer_html = f"""
         <table style="width:100%; border-collapse:collapse; margin-top:20px;">
-          <tr>
-          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">*&nbsp;&nbsp;termini so bili določeni v koledarju za leto 2025.</td>
+          <!--tr>
+          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">* planirani organizator ni dobil strelišča</td>
           </tr>
           <tr>
-          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">** prestavljen datum 18.4. &rarr; 19.4.</td>
+          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">** LK Muta ni dobil dvorane, organizira LK Šenčur</td>
           </tr>
           <tr>
-          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">&nbsp;&nbsp;&nbsp;&nbsp;dodan Sava 3D pokal</td>
+          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">*** organizator: LK Kamnik ne more zagotoviti strelišča, lahko organizira TKD Sovica</td>
+          </tr-->
+          <tr>
+          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">Dodan Sava 3D pokal (Divčibare / Bjelovar / Mokrice)</td>
           </tr>
           <tr>
-          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">Koledar potrjen na 3. redni seji IO 17.2.2026</td></tr>
+          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">Koledar potrjen na 3. seji IO 10.2.2026</td>
+          </tr>
         </table>
         <table style="width:100%; border-collapse:collapse; margin-top:50px;">
         <tr>
@@ -57,9 +59,6 @@ def json_to_colored_pdf(data, pdf_file):
             <td style="width:20%; text-align:right; padding-right:20px; font-family:Arial, sans-serif; font-size:8px; color:silver;">
           generirano: {current_date}
         </td>
-         <tr>
-            <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:8px; color:white;">"Poskusi biti prijazen do ljudi, izogibaj se mastni hrani, beri dobre knjige, malo se sprehajaj in živi v miru z ljudmi vseh ver in narodov." – Monty Python, The Meaning of Life (1983)</td>
-            <td style="width:20%; text-align:right; padding-right:20px; font-family:Arial, sans-serif; font-size:8px; color:white;"></td>
           </tr>
           
         </table>
@@ -195,7 +194,7 @@ def main():
     combined_events = competitions + extra_events
 
     # generiranje PDF koledarja
-    json_to_colored_pdf(combined_events, f"output/koledar_tekem-v{version}.pdf")
+    json_to_colored_pdf(combined_events, f"output/koledar_tekem-final-{version}.pdf")
     print("PDF generiran.")
 
 if __name__ == "__main__":

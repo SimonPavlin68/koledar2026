@@ -4,26 +4,26 @@
         "tekmovanje": "Dvoranski pokal 2026",
         "organizator": "LK Ilirska Bistrica",
         "ianseo_id": "2026001",
-        "kraj": "Ilirska Bistrica *"
+        "kraj": "Ilirska Bistrica"
     },{
         "od": "25.01.2026",
         "disciplina": "Dvoranski krog",
         "tekmovanje": "Dvoranski pokal 2026",
         "organizator": "TKD Sovica",
         "ianseo_id": "2026002",
-        "kraj": "Rakek *"
+        "kraj": "Rakek"
     },{
         "od": "07.02.2026",
         "disciplina": "Dvoranski krog",
         "tekmovanje": "Dvoranski pokal 2026",
         "organizator": "LK Šenčur",
         "ianseo_id": "2026005",
-        "kraj": "Šenčur *"
+        "kraj": "Šenčur"
     },{
         "od": "08.02.2026",
         "disciplina": "Šolsko tekmovanje",
         "tekmovanje": "Šolsko dvoransko državno tekmovanje",
-        "organizator": "LK Šenčur",
+        "organizator": "LK Šenčur **",
         "ianseo_id": "2026006",
         "kraj": "Šenčur"
     },{
@@ -47,7 +47,7 @@
         "tekmovanje": "Državno prvenstvo",
         "organizator": "ŠD VLR Vilijem",
         "ianseo_id": "2026007",
-        "kraj": "Vrhnika *"
+        "kraj": "Vrhnika"
     },
     {
         "od": "14.03.2026",
@@ -106,10 +106,10 @@
         "kraj": "Lendava"
     },
     {
-        "od": "19.04.2026",
+        "od": "18.04.2026",
         "disciplina": "3D krog",
         "tekmovanje": "3D pokal",
-        "organizator": "ŠD VLR Vilijem *",
+        "organizator": "ŠD VLR Vilijem",
         "ianseo_id": "2026014",
         "kraj": "Vrhnika"
     },
@@ -194,11 +194,18 @@
         "kraj": "Turjak"
     },
     {
+        "od": "04.07.2026",
+        "disciplina": "70/50m krog",
+        "tekmovanje": "Tarčni pokal",
+        "organizator": "*",
+        "ianseo_id": "2026026"
+    },
+    {
         "od": "11.07.2026",
         "disciplina": "AH 12+12",
         "tekmovanje": "AH pokal",
         "organizator": "Društvo Šentlok",
-        "ianseo_id": "2026026",
+        "ianseo_id": "2026027",
         "kraj": "Boč"
     },
     {
@@ -206,15 +213,15 @@
         "disciplina": "70/50m krog",
         "tekmovanje": "Tarčni pokal",
         "organizator": "LD Logatec",
-        "ianseo_id": "2026027",
+        "ianseo_id": "2026028",
         "kraj": "Logatec"
     },
     {
         "od": "23.08.2026",
         "disciplina": "3D krog",
-        "tekmovanje": "3D pokal + Sava 3D pokal - 3.krog (finale)",
+        "tekmovanje": "3D pokal + Sava 3D pokal 3.krog (finale)",
         "organizator": "LK DLL Potens",
-        "ianseo_id": "2026028",
+        "ianseo_id": "2026029",
         "kraj": "Grad Mokrice"
     },
     {
@@ -222,31 +229,31 @@
         "disciplina": "AH 12+12",
         "tekmovanje": "Državno prvenstvo in AH pokal",
         "organizator": "DLLL Snežniška Diana",
-        "ianseo_id": "2026029",
-        "kraj": "Kozarišče"
-    },
-        {
-        "od": "12.09.2026",
-        "disciplina": "3D krog",
-        "tekmovanje": "Državno prvenstvo",
-        "organizator": "LK Lendava",
         "ianseo_id": "2026030",
-        "kraj": "Lendava"
+        "kraj": "Kozarišče"
     },
     {
         "od": "19.09.2026",
         "disciplina": "70/50m krog + OK",
         "tekmovanje": "Državno prvenstvo",
-        "organizator": "TKD Sovica",
-        "ianseo_id": "2026031",
+        "organizator": "TKD Sovica ***",
+        "ianseo_id": "2026032",
         "kraj": "Rakek"
+    },
+    {
+        "od": "12.09.2026",
+        "disciplina": "3D krog",
+        "tekmovanje": "Državno prvenstvo",
+        "organizator": "LK Lendava",
+        "ianseo_id": "2026031",
+        "kraj": "Lendava"
     },
     {
         "od": "08.11.2026",
         "disciplina": "Dvoranski krog",
         "tekmovanje": "Dvoranski pokal 2027",
         "organizator": "LK Budanje",
-        "ianseo_id": "2026032",
+        "ianseo_id": "2026033",
         "kraj": "Ajdovščina"
     },
     {
@@ -254,7 +261,7 @@
         "disciplina": "Dvoranski krog",
         "tekmovanje": "Dvoranski pokal 2027",
         "organizator": "LK DLL Potens",
-        "ianseo_id": "2026033",
+        "ianseo_id": "2026034",
         "kraj": "Vrhnika"
     },
     {
@@ -262,7 +269,7 @@
         "disciplina": "Dvoranski krog",
         "tekmovanje": "Dvoranski pokal 2027",
         "organizator": "LK MINS Postojna",
-        "ianseo_id": "2026034",
+        "ianseo_id": "2026035",
         "kraj": "Postojna"
     },
     {
