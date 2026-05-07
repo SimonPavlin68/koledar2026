@@ -2,7 +2,11 @@ import pdfkit
 from datetime import datetime
 import base64
 
-version = "7"
+version = "9"
+
+
+def is_canceled(row):
+    return row.get("odpovedano", False)
 
 
 def get_base64_image(path):
@@ -38,13 +42,16 @@ def json_to_colored_pdf(data, pdf_file):
     footer_html = f"""
         <table style="width:100%; border-collapse:collapse; margin-top:20px;">
           <tr>
-          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">*&nbsp;&nbsp;termini so bili določeni v koledarju za leto 2025.</td>
+          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">*&nbsp;&nbsp;&nbsp;&nbsp;Termini so bili določeni v koledarju za leto 2025.</td>
           </tr>
           <tr>
-          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">** prestavljen datum 18.4. &rarr; 19.4.</td>
+          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">**&nbsp;&nbsp;&nbsp;prestavljen datum 18.4. -> 19.4.</td>
+          </tr>
+           <tr>
+          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">***&nbsp;odpovedano</td>
           </tr>
           <tr>
-          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">&nbsp;&nbsp;&nbsp;&nbsp;dodan Sava 3D pokal</td>
+          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">dodan Sava 3D pokal</td>
           </tr>
           <tr>
           <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">Koledar potrjen na 3. redni seji IO 17.2.2026</td></tr>
@@ -125,7 +132,13 @@ def json_to_colored_pdf(data, pdf_file):
         # Če sta od in do enaka → do je prazen
         do_val = "" if do_raw == od_val else do_raw
         id = (row.get("ianseo_id") or "").strip()
-        table_html += f'<tr style="background-color:{bgcolor};">'
+        row_style = f"background-color:{bgcolor};"
+        canceled = is_canceled(row)
+        if canceled:
+            row_style += " text-decoration: line-through; color: red;"
+            tekmovanje += " (odpovedano)"
+        table_html += f'<tr style="{row_style}">'
+        # table_html += f'<tr style="background-color:{bgcolor};">'
         table_html += f'<td style="border:1px solid black; vertical-align:top;">{od_val}</td>'
         table_html += f'<td style="border:1px solid black; vertical-align:top;">{do_val}</td>'
         table_html += f'<td style="border:1px solid black; vertical-align:top;">{disciplina}</td>'

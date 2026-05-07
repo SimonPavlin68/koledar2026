@@ -85,9 +85,10 @@
         "od": "04.04.2026",
         "disciplina": "3D krog",
         "tekmovanje": "3D pokal",
-        "organizator": "LK Gornji Grad",
+        "organizator": "LK Gornji Grad ***",
         "ianseo_id": "2026012",
-        "kraj": "Gornji Grad"
+        "kraj": "Gornji Grad",
+        "odpovedano": true
     },
     {
         "od": "11.04.2026",
@@ -236,7 +237,7 @@
     {
         "od": "19.09.2026",
         "disciplina": "70/50m krog + OK",
-        "tekmovanje": "Državno prvenstvo",
+        "tekmovanje": "Državno prvenstvo, Para DP",
         "organizator": "TKD Sovica",
         "ianseo_id": "2026031",
         "kraj": "Rakek"
