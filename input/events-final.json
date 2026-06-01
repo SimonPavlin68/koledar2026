@@ -80,7 +80,21 @@
         "kraj": "Divčibare (Srbija)",
         "disciplina": "3D krog",
         "od": "20.06.2026"
+    },
+   {
+        "tekmovanje": "mladinski pokal - 1.tekmovanje",
+        "kraj": "Ankaran",
+        "organizator": "LK Ankaran *****",
+        "disciplina": "70/50m krog",
+        "od": "14.06.2026"
     },{
+        "tekmovanje": "mladinski pokal - 2.tekmovanje",
+        "kraj": "Stožice",
+        "organizator": "LZS *****",
+        "disciplina": "70/50m krog",
+        "od": "28.06.2026"
+    },
+  {
         "tekmovanje": "Sava 3D pokal - 2.krog",
         "kraj": "Bjelovar (Hrvaška)",
         "disciplina": "3D krog",

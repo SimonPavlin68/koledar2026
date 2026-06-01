@@ -2,7 +2,7 @@ import pdfkit
 from datetime import datetime
 import base64
 
-version = "9"
+version = "11"
 
 
 def is_canceled(row):
@@ -42,19 +42,25 @@ def json_to_colored_pdf(data, pdf_file):
     footer_html = f"""
         <table style="width:100%; border-collapse:collapse; margin-top:20px;">
           <tr>
-          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">*&nbsp;&nbsp;&nbsp;&nbsp;Termini so bili določeni v koledarju za leto 2025.</td>
+          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Termini so bili določeni v koledarju za leto 2025.</td>
           </tr>
           <tr>
-          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">**&nbsp;&nbsp;&nbsp;prestavljen datum 18.4. -> 19.4.</td>
+          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prestavljen datum 18.4. -> 19.4.</td>
           </tr>
            <tr>
-          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">***&nbsp;odpovedano</td>
+          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">***&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;odpovedano</td>
           </tr>
           <tr>
+          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">****&nbsp;&nbsp;&nbsp;&nbsp;prestavljen datum 24.5. -> 23.5.</td>
+          </tr>
+          <!--tr>
           <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">dodan Sava 3D pokal</td>
-          </tr>
+          </tr-->
           <tr>
-          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">Koledar potrjen na 3. redni seji IO 17.2.2026</td></tr>
+          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">Koledar potrjen na 4. redni seji IO 4.5.2026</td></tr>
+          <tr>
+          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">*****&nbsp;&nbsp;&nbsp;dodan mladinski pokal 14.6. in 28.6.</td>
+          </tr>&nbsp;&nbsp;&nbsp;
         </table>
         <table style="width:100%; border-collapse:collapse; margin-top:50px;">
         <tr>
