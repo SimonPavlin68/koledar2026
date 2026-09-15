@@ -2,7 +2,7 @@ import pdfkit
 from datetime import datetime
 import base64
 
-version = "11"
+version = "12"
 
 
 def is_canceled(row):
@@ -53,13 +53,13 @@ def json_to_colored_pdf(data, pdf_file):
           <tr>
           <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">****&nbsp;&nbsp;&nbsp;&nbsp;prestavljen datum 24.5. -> 23.5.</td>
           </tr>
-          <!--tr>
-          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">dodan Sava 3D pokal</td>
-          </tr-->
           <tr>
           <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">Koledar potrjen na 4. redni seji IO 4.5.2026</td></tr>
           <tr>
           <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">*****&nbsp;&nbsp;&nbsp;dodan mladinski pokal 14.6. in 28.6.</td>
+          </tr>
+          <tr>
+          <td style="text-align:left; padding-left:20px; font-family:Arial; font-size:12px; color:silver;">******&nbsp;&nbsp;prestavljen datum 8.11. -> 20.12.</td>
           </tr>&nbsp;&nbsp;&nbsp;
         </table>
         <table style="width:100%; border-collapse:collapse; margin-top:50px;">

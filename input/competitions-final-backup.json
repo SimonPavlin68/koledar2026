@@ -236,7 +236,6 @@
     },
     {
         "od": "19.09.2026",
-        "do": "20.09.2026",
         "disciplina": "70/50m krog + OK",
         "tekmovanje": "Državno prvenstvo, Para DP",
         "organizator": "TKD Sovica",
@@ -244,10 +243,10 @@
         "kraj": "Rakek"
     },
     {
-        "od": "20.12.2026",
+        "od": "08.11.2026",
         "disciplina": "Dvoranski krog",
         "tekmovanje": "Dvoranski pokal 2027",
-        "organizator": "LK Budanje ******",
+        "organizator": "LK Budanje",
         "ianseo_id": "2026032",
         "kraj": "Ajdovščina"
     },
